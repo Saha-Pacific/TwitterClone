@@ -10,8 +10,9 @@
        
 
 
-        public Notification() : base(Guid.NewGuid( ))
+        public Notification(String NotificationType) : base(Guid.NewGuid( ))
         {
+
 
         }
         public Guid Id
@@ -28,7 +29,7 @@
             get { return _type; }
             set { _type = value; }
         }
-        public string Message
+        protected string Message
         {
             get { return _message; }
             set { _message = value; }

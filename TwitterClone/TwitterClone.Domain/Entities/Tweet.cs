@@ -1,18 +1,15 @@
 ﻿
 namespace TwitterClone.Domain.Entities
 {
-    public class Tweet
+    public class Tweet : BaseEntity
     {
-        private Guid _id;
+        
         private Guid _userId;
         private string _content;
-        private DateTime _createdAt;
-        private DateTime _modifiedAt;
-
-        public Tweet()
+       
+        public Tweet() : base(Guid.NewGuid( ))
         {
-            _id = Guid.NewGuid();
-            _createdAt = DateTime.UtcNow;
+            
         }
         public Guid Id
         {
@@ -32,10 +29,20 @@ namespace TwitterClone.Domain.Entities
         {
             get { return _createdAt; }
         }
-        public DateTime ModifiedAt
+        public DateTime? ModifiedAt
         {
             get { return _modifiedAt; }
             set { _modifiedAt = value; }
+        }
+        public DateTime CreatedBy
+        {
+            get { return _createdBy; }
+            set { _createdBy = value; }
+        }
+        public DateTime? ModifiedBy
+        {
+            get { return _modifiedBy; }
+            set { _modifiedBy = value; }
         }
     }
         
